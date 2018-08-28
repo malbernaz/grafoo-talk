@@ -1,0 +1,152 @@
+import { Head } from "mdx-deck"
+import Cowsay from "react-cowsay"
+import Logo from "./Logo"
+import Me from "./Me"
+import { theme, PINK } from "./config"
+import { Schema, Query, Payload, SimpleRequest, CodeLayout } from "./code"
+
+export { theme }
+
+<Head>
+  <title>Grafoo: a anatomia de um cliente GraphQL</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" />
+  <style>{`
+    code { background: white !important; }
+    pre, strong { color: ${PINK} }
+  `}</style>
+</Head>
+
+<Logo />
+
+_a anatomia de um cliente GraphQL_
+
+---
+
+## Quem sou eu?
+
+<Me />
+
+<br />
+<br />
+<small>
+  <strong>email:</strong> albernazmiguel@gmail.com
+</small>
+<br />
+<small>
+  <strong>twitter:</strong> @miguel_albernaz
+</small>
+<br />
+<small>
+  <strong>github:</strong> @malbernaz
+</small>
+
+---
+
+## GraphQL
+
+Uma linguagem de query para APIs e um runtime para resolver essas queries com os seus dados.
+
+---
+
+### Descreva os seus dados
+
+<Schema />
+
+export default CodeLayout
+
+---
+
+### Peça por dados específicos
+
+<Query />
+
+export default CodeLayout
+
+---
+
+### Obtenha resultados previsíveis
+
+<Payload />
+
+export default CodeLayout
+
+---
+
+## O que é um cliente de GraphQL?
+
+Um cliente GraphQL atua junto a sua API GraphQL, executando `queries` e `mutations` que expressam a sua necessidade de dados e recebem como resposta um JSON com as informacões requisitadas.
+
+---
+
+## Tipos de clientes
+
+Podemos diferenciar dois tipos de clientes GraphQL. Os mais simples, que realizam a simples tarefa de se comunicar com a sua API e os que a isto somam um sistema de caching e/ou ferramentas para manter consistente o estado.
+
+---
+
+## Clientes simples
+
+<SimpleRequest />
+
+export default CodeLayout
+
+---
+
+## Clientes complexos
+
+Os clientes mais avançados existem com o propósito de otimizar a comunicação com a sua API; têm utilidades para manejar o estado e tentam aproveitar ao máximo os beneficios que o GraphQL oferece no frontend. 
+
+---
+
+## Anatomia de um cliente GraphQL
+
+Clientes GraphQL complexos são compostos de basicamente três partes:
+
+---
+
+## Transporte
+
+Basicamente transporte é como o seu cliente se comunica com a sua API. Pode-se dizer que é um cliente por sí só (simples), sendo responsável por requisitar e/ou executar as suas queries.
+
+---
+
+## Cache
+
+Pense no cache como uma store que armazena os resultados das suas queries de maneira normalizada; idealmente mapeados por um ID único para que se mantenha o estado consistente.
+
+---
+
+## Integrações
+
+Significa como o cliente se integra com determinado framework; de maneira geral componentes, ou interfaces.
+
+---
+
+## Grafoo
+
+É um cliente GraphQL que foi criado com enfoque em **simplicidade**, **usabilidade** e **performance**.
+
+---
+
+## Por que usar?
+
+É uma biblioteca com zero dependências, performática e muito pequena (**1.6kb**) porque não é fornecida com um parser GraphQL.
+
+---
+
+## Como Funciona?
+
+A linguagem GraphQL nos permite fazer uma análise profunda de como os nossos dados estão estruturados.
+
+---
+
+<div style={{ fontSize: "1.2rem", fontWeight: "bold" }}>
+<Cowsay f="doge">
+{`
+muito tchao\n
+      preocupação\n
+  tão fim
+`.trim()}
+</Cowsay>
+</div>
+

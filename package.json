@@ -1,0 +1,18 @@
+{
+  "name": "grafoo-talk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx",
+    "deploy": "now --public --local-config now.json"
+  },
+  "dependencies": {
+    "mdx-deck": "^1.6.7",
+    "now": "^11.4.0",
+    "react": "^16.4.2",
+    "react-cowsay": "^0.1.0",
+    "react-highlight": "^0.12.0"
+  }
+}
