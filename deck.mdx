@@ -3,7 +3,7 @@ import Cowsay from "react-cowsay"
 import Logo from "./Logo"
 import Me from "./Me"
 import { theme, PINK } from "./config"
-import { Schema, Query, Payload, SimpleRequest, CodeLayout, endSay } from "./code"
+import { SimpleRequest, CodeLayout, GQL, endSay } from "./code"
 
 export { theme }
 
@@ -48,27 +48,7 @@ Uma linguagem de query para APIs e um runtime para resolver essas queries com os
 
 ---
 
-### Descreva os seus dados
-
-<Schema />
-
-export default CodeLayout
-
----
-
-### Peça por dados específicos
-
-<Query />
-
-export default CodeLayout
-
----
-
-### Obtenha resultados previsíveis
-
-<Payload />
-
-export default CodeLayout
+<GQL />
 
 ---
 

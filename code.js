@@ -1,5 +1,6 @@
 import React from "react";
 import Highlight from "react-highlight";
+import { PINK } from "./config";
 
 export const CodeLayout = ({ children }) => <div style={{ textAlign: "left" }}>{children}</div>;
 
@@ -57,3 +58,29 @@ muito tchao\n
       preocupação\n
   tão fim
 `;
+
+const gqlStyle = {
+  container: {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gridGap: "1rem",
+    textAlign: "left",
+    fontSize: "1.2rem"
+  },
+  heading: {
+    color: PINK,
+    fontSize: "2rem",
+    margin: 0
+  }
+};
+
+export const GQL = () => (
+  <div style={gqlStyle.container}>
+    <h3 style={gqlStyle.heading}>Descreva os seus dados</h3>
+    <h3 style={gqlStyle.heading}>Peça por dados específicos</h3>
+    <h3 style={gqlStyle.heading}>Obtenha resultados previsíveis</h3>
+    <Schema />
+    <Query />
+    <Payload />
+  </div>
+);
