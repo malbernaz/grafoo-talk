@@ -53,11 +53,19 @@ export const SimpleRequest = () => (
   <Highlight language="javascript">{simpleRequest.trim()}</Highlight>
 );
 
-export const endSay = `
-muito tchao\n
-      preocupação\n
-  tão fim
+const graphqlExecution = `
+import { execute, parse } from "graphql";
+import schema from "./schema";
+
+const transport = (query, variableValues) =>
+  execute({
+    schema,
+    documentAst: parse(query),
+    variableValues
+  });
 `;
+
+export const GQLExec = () => <Highlight language="javascript">{graphqlExecution.trim()}</Highlight>;
 
 const gqlStyle = {
   container: {
@@ -84,3 +92,9 @@ export const GQL = () => (
     <Payload />
   </div>
 );
+
+export const endSay = `
+muito tchao\n
+      preocupação\n
+  tão fim
+`;

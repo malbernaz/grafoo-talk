@@ -1,9 +1,10 @@
-import { Head } from "mdx-deck"
+import { Head, Image } from "mdx-deck"
 import Cowsay from "react-cowsay"
 import Logo from "./Logo"
 import Me from "./Me"
 import { theme, PINK } from "./config"
-import { SimpleRequest, CodeLayout, GQL, endSay } from "./code"
+import { SimpleRequest, CodeLayout, GQL, GQLExec, endSay } from "./code"
+import { Split } from "mdx-deck/layouts"
 
 export { theme }
 
@@ -104,19 +105,63 @@ Significa como o cliente se integra com determinado framework; de maneira geral 
 
 ## Grafoo
 
-É um cliente GraphQL que foi criado com enfoque em **simplicidade**, **usabilidade** e **performance**.
-
----
-
-## Por que usar?
-
-É uma biblioteca com zero dependências, performática e muito pequena (**1.6kb**) porque não é fornecida com um parser GraphQL.
+É um cliente GraphQL para todos os propósitos que foi criado com enfoque em **simplicidade**, **usabilidade** e **performance**.
 
 ---
 
 ## Como Funciona?
 
-A linguagem GraphQL nos permite fazer uma análise profunda de como os nossos dados estão estruturados.
+A biblioteca funciona com a premissa de que todos os nós do seu grafo possam ser armazenados por um ID único. Então aproveitando a análise estática que o GraphQL permite, todas as queries da aplicação são compiladas em tempo de build para que sejam incluidos um campo ou mais que possam servir como identificador.
+
+---
+
+## Transporte
+
+É interessante resaltar que o GraphQL não é uma tecnologia estritamente para servidores. Com o Grafoo não é diferente. Qualquer função que retorne uma promise com o resultado de uma execução de query é um transporte.
+
+---
+
+<SimpleRequest />
+
+export default CodeLayout
+
+---
+
+<GQLExec />
+
+export default CodeLayout
+
+---
+
+## Cache
+
+Durante o tempo de execução os resultados das queries junto a nossa API são armazenados de duas maneiras:
+
+---
+
+## Mapa de paths
+
+Em formato de árvore para armazenar a estrutura desse resultado
+
+---
+
+<img src="./querytree.svg" />
+
+---
+
+## Mapa de objectos
+
+E em formato plano para armazenar cada objeto por um ID único para mantendo o controle sobre quais objetos vão ser nessessários para construir o resultado de uma determinada query
+
+---
+
+<img src="objectmap.svg" style={{ width: "100%", padding: "1rem" }} />
+
+---
+
+## Integrações
+
+demo
 
 ---
 
