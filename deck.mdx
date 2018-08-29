@@ -3,7 +3,7 @@ import Cowsay from "react-cowsay"
 import Logo from "./Logo"
 import Me from "./Me"
 import { theme, PINK } from "./config"
-import { Schema, Query, Payload, SimpleRequest, CodeLayout } from "./code"
+import { Schema, Query, Payload, SimpleRequest, CodeLayout, endSay } from "./code"
 
 export { theme }
 
@@ -94,7 +94,7 @@ export default CodeLayout
 
 ## Clientes complexos
 
-Os clientes mais avançados existem com o propósito de otimizar a comunicação com a sua API; têm utilidades para manejar o estado e tentam aproveitar ao máximo os beneficios que o GraphQL oferece no frontend. 
+Os clientes mais avançados existem com o propósito de otimizar a comunicação com a sua API; têm utilidades para manejar o estado e tentam aproveitar ao máximo os beneficios que o GraphQL oferece no frontend.
 
 ---
 
@@ -141,12 +141,7 @@ A linguagem GraphQL nos permite fazer uma análise profunda de como os nossos da
 ---
 
 <div style={{ fontSize: "1.2rem", fontWeight: "bold" }}>
-<Cowsay f="doge">
-{`
-muito tchao\n
-      preocupação\n
-  tão fim
-`.trim()}
-</Cowsay>
+  <Cowsay f="doge">
+    {endSay.trim()}
+  </Cowsay>
 </div>
-

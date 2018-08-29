@@ -42,7 +42,7 @@ function request(query, variables) {
       "content-type": "application/json"
     }
   };
-  
+
   return fetch("http://some.graphql.api", init)
     .then(res => res.json());
 }
@@ -51,3 +51,9 @@ function request(query, variables) {
 export const SimpleRequest = () => (
   <Highlight language="javascript">{simpleRequest.trim()}</Highlight>
 );
+
+export const endSay = `
+muito tchao\n
+      preocupação\n
+  tão fim
+`;
