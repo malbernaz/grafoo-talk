@@ -74,3 +74,6 @@ typings/
 
 # vscode 
 .vscode/
+
+# project
+dist
