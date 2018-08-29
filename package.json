@@ -6,7 +6,7 @@
   "scripts": {
     "start": "mdx-deck deck.mdx",
     "build": "mdx-deck build deck.mdx",
-    "deploy": "now --public --local-config now.json"
+    "deploy": "npm run build && now --public --local-config now.json"
   },
   "dependencies": {
     "mdx-deck": "^1.6.7",
